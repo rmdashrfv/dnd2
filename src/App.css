@@ -22,3 +22,18 @@
   object-fit: fill;
   z-index: -1;
 }
+
+.menu-links {
+  margin-top: -10%;
+}
+
+.menu-links h3 {
+  color: #fff;
+  font-size: 2em;
+  padding-left: 2.5%;
+}
+
+.menu-links h3:hover {
+  cursor: pointer;
+  color: orange;
+}
