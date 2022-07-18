@@ -1,4 +1,7 @@
 import './App.css'
+import { useState } from 'react'
+import MainMenu from './components/MainMenu'
+import CreateACharacter from './components/CreateACharacter'
 
 function App() {
   // This syntax is called JSX = JavaScript XML
@@ -6,22 +9,16 @@ function App() {
   // useState is a function that returns an array of two elements
   // returns a state variable and a function
   // to update it
+  // TERNARY OPERATOR:
+  // (condition) ? return this if true : return this if false
+  // <Home />  ... const Home = {html: [], change: () => {}}
+  const [screen, setScreen] = useState('main')
   
-  return (
-    <div className="screen">
-      <video autoPlay muted loop id="myVideo">
-        <source src="https://a2development.s3.amazonaws.com/H264HD1080.mov" type="video/mp4" />
-      </video>
-      <div className="" id="fs-overlay">
-      <img
-        id="header-img"
-        src='https://1000logos.net/wp-content/uploads/2021/08/Dungeons-and-Dragons-Logo-2014.png'
-      />
-      <div className="menu-links">
-        <h3>Create a Character</h3>
-        <h3>About Dungeons & Dragons</h3>
-      </div>
-      </div>
+  return(
+    <div>
+      {
+        (screen === 'main') ? <MainMenu setScreen={setScreen} /> : <CreateACharacter />
+      }
     </div>
   );
 }
