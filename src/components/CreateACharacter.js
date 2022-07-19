@@ -26,16 +26,23 @@ const CreateACharacter = () => {
   return(
     <div>
       <h1>Create A Character</h1>
-      <img src={selectedCharImg} className="selected-char-img" />
-      <select onChange={handleCharSelect}>
-        {
-          Object.keys(portraitMap).map((element) => {
-            return(
-              <option value={portraitMap[element]}>{element}</option>
-            )
-          })
-        }
-      </select>
+      <div className="char-select-container">
+        <div>
+          <input type={'text'} className="char-name" placeholder='Name your character' /><br />
+          <select onChange={handleCharSelect} className="class-select">
+            {
+              Object.keys(portraitMap).map((element) => {
+                return(
+                  <option value={portraitMap[element]}>{element}</option>
+                )
+              })
+            }
+          </select>
+        </div>
+        <div>
+          <img src={selectedCharImg} className="selected-char-img" />
+        </div>
+      </div>
     </div>
   )
 }
