@@ -50,6 +50,7 @@ h1, h2, h3 {
 
 .char-select-container {
   display: flex;
+  justify-content: center;
 }
 
 .char-name, .class-select {
